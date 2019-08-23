@@ -9,6 +9,9 @@ let Bootstrap = require('bootstrap')
 global.Bootstrap = Bootstrap
 import 'bootstrap/dist/css/bootstrap.css'
 
+import VueTouch from 'vue-touch';
+Vue.use(VueTouch);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
