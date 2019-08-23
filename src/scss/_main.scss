@@ -1,0 +1,200 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "@/scss/_variables.scss";
+@import "@/scss/_mixins.scss";
+
+html{
+    scroll-behavior: smooth;
+}
+
+.homepage-wrapper{
+    
+    .my-divider{
+        @include myDivider(265px 0);
+    }
+    #footer-curve{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 150px;
+    }
+    #curve{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    #curve path{
+        fill: #ccc;
+    }
+    .footer{
+        bottom: 0;
+    }
+    
+}
+
+@include hrTop($hrTopBlack1: 1px solid #231F20 );
+
+// desktop
+@include media-breakpoint-up(xl){
+    .bg-footer{
+        height: 780px;
+    }
+}
+
+@include media-breakpoint-up(lg){
+    .home-bg{
+        @include homeImageProperties(absolute, no-repeat, right, 1200px, 100%, 658px, 209px);
+    }
+    .left-bg{
+        width: 260px;
+    }
+    .section-header{
+        .sh-title-our-services{
+            span{
+                @include sectionHeaderSpan(absolute, 90px, 600, -80px, 84px, #E6E6E6, -1);
+            }
+        }
+        .sh-title-contact-us{
+            span{
+                @include sectionHeaderSpan(absolute, 90px, 600, -74px, auto, #E6E6E6, -1);
+            }
+        }
+    }
+    .rbl-rocket-line{
+        @include rocketLineProperties($borderTopGray, 425px);
+    }
+    .rbl-rocket-icon{
+        @include rocketIconProperties(relative, 425px);
+    }
+    .rbl-rocket-icon::after{
+        @include rocketIconAfterProperties("", absolute, no-repeat, 50px, 100px, -45px, -12px);
+    }
+}
+@include media-breakpoint-down(lg){
+    .home-bg{
+        @include homeImageProperties(absolute, no-repeat, right, 900px, 100%, 658px, 209px);
+    }
+    .left-bg{
+        width: 280px;
+    }
+    .section-header{
+        .sh-title-our-services{
+            span{
+                @include sectionHeaderSpan(absolute, 70px, 600, -57px, 120px, #E6E6E6, -1);
+            }
+        }
+        .sh-title-contact-us{
+            span{
+                @include sectionHeaderSpan(absolute, 72px, 600, -52px, auto, #E6E6E6, -1);
+            }
+        }
+    }
+    .bg-footer{
+        height: 690px;
+    }
+}
+
+// table
+@include media-breakpoint-up(md){
+    .section-padding{
+        padding: 140px 0;
+    }
+    .rbl-top-menu li a{
+        color: #fff !important;
+        font-size: 11px;
+        font-weight: 600;
+    }
+    .footer{
+        position: absolute;
+    }
+}
+@include media-breakpoint-down(md){
+    .bg-footer{
+        height: 660px;
+    }
+    .right-bg{
+        width: 500px;
+    }
+    .left-bg{
+        width: 270px;
+    }
+    .home-bg{
+        background-size: 660px;
+    }
+
+    // section header title
+    .section-header{
+        .sh-title-our-services{
+            span{
+                @include sectionHeaderSpan(absolute, 60px, 600, -45px, 63px, #E6E6E6, -1);
+            }
+        }
+        .sh-title-contact-us{
+            span{
+                @include sectionHeaderSpan(absolute, 60px, 600, -39px, auto, #E6E6E6, -1);
+            }
+        }
+    }
+
+    // rocket line
+    .rbl-rocket-line{
+        @include rocketLineProperties($borderTopGray, 300px);
+    }
+    .rbl-rocket-icon{
+        @include rocketIconProperties(relative, 300px);
+    }
+    .rbl-rocket-icon::after{
+        @include rocketIconAfterProperties("", absolute, no-repeat, 50px, 100px, -45px, -12px);
+    }
+}
+
+// mobile
+@include media-breakpoint-down(sm){
+    // padding
+    .pb-mobile-5, .py-mobile-5{
+        padding-bottom: 3rem !important;
+    }
+    .pt-mobile-5, .py-mobile-5{
+        padding-top: 3rem !important;
+    }
+    .pb-mobile-4, .py-mobile-4{
+        padding-bottom: 1.5rem !important;
+    }
+    .pt-mobile-4, .py-mobile-4{
+        padding-top: 1.5rem !important;
+    }
+    .pb-mobile-3, .py-mobile-3{
+        padding-bottom: 1rem !important;
+    }
+    .pt-mobile-3, .py-mobile-3{
+        padding-top: 1rem !important;
+    }
+    .pb-mobile-2, .py-mobile-2{
+        padding-bottom: 0.5rem !important;
+    }
+    .pt-mobile-2, .py-mobile-2{
+        padding-top: 0.5rem !important;
+    }
+
+    .home-bg{
+        @include homeImageProperties(relative, no-repeat, center, 335px, 100%, 300px, 0);
+    }
+
+    // display
+    .d-mobile-block{
+        display: block !important;
+    }
+    .bg-footer{
+        height: 620px;
+    }
+}
+
+@include media-breakpoint-down(xs){
+    .bg-footer{
+        height: 620px;
+        background-size: 220%;
+    }
+}

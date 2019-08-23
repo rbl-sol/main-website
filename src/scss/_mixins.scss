@@ -1,0 +1,61 @@
+@mixin sectionHeaderSpan($position, $fontSize, $fontWeight, $top, $right, $color, $zIndex) {
+    position: $position;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    top: $top;
+    right: $right;
+    color: $color;
+    z-index: $zIndex;
+}
+
+@mixin myDivider($margin) {
+    margin: $margin;
+}
+
+@mixin hrTop($args...) {
+    @each $class, $hrTop in keywords($args) {
+        .#{$class}{
+            border-top: #{$hrTop};
+        }
+    }
+}
+
+// rocket icon
+@mixin rocketLineProperties($borderTop, $width) {
+    border-top: $borderTop;
+    width: $width;
+}
+@mixin rocketIconProperties($positionRelative, $width) {
+    position: $positionRelative;
+    width: $width;
+}
+@mixin rocketIconAfterProperties($content, $position, $backgroundRepeat, $width, $height, $right, $top) {
+    content: $content;
+    position: $position;
+    background-repeat: $backgroundRepeat;
+    width: $width;
+    height: $height;
+    right: $right;
+    top: $top;
+}
+
+// home image
+@mixin homeImageProperties($position, $backgroundRepeat, $backgroundPosition, $backgroundSize, $width, $height, $top) {
+    position: $position;
+    background-repeat: $backgroundRepeat;
+    background-position: $backgroundPosition;
+    background-size: $backgroundSize;
+    width: $width;
+    height: $height;
+    top: $top;
+}
+
+@mixin leftImageProperties($position, $backgroundRepeat, $backgroundSize, $height, $top, $left, $zIndex) {
+    position: $position;
+    background-repeat: $backgroundRepeat;
+    background-size: $backgroundSize;
+    height: $height;
+    top: $top;
+    left: $left;
+    z-index: $zIndex;
+}
